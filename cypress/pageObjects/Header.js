@@ -77,7 +77,6 @@ class Header {
         this.elements.navDropdownMenuLinkQuestion().invoke('removeAttr', 'target').click()
         return this;
     };
-
 }
 
 export default Header;

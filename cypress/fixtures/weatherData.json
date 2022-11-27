@@ -1,7 +1,7 @@
 {
-  "headerForecastDay": "8-day forecast",
-  "numberDays": 8,
-  "iconWeather": 8,
+  "headerForecastEightDay": "8-day forecast",
+  "countForecastEightDays": 8,
+  "iconWeatherForecastEightDays": 8,
   "navMenuLink": [
     "Guide",
     "API",

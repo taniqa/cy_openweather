@@ -163,5 +163,4 @@ describe('Testing navigation', () => {
             .elements.pageTitleQuestion().should('have.text', this.data.pageTitleText[14])
             .and('be.visible')
     });
-
 });
