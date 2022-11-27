@@ -4,7 +4,7 @@ import "cypress-real-events/support" //подключение библиотек
 describe ('Daily forecast on index', ()=> {
 
     beforeEach (function () {
-        cy.visit ('https://openweathermap.org/');
+        cy.visit ('/');
         cy.fixture('weatherData').then ((data) => {
             this.data = data;                        });
     })
@@ -49,7 +49,7 @@ describe ('Daily forecast on index', ()=> {
 describe ('Daily forecast on index', ()=> {
 
     beforeEach (function () {
-        cy.visit ('https://openweathermap.org/');
+        cy.visit ('/');
         //cy.viewport(1680, 1050); - так можно менять размер окна браузера
         cy.fixture('weatherData').then ((data) => {
             this.data = data;                        });

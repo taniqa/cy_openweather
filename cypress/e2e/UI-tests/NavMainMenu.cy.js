@@ -21,24 +21,20 @@ describe ('Testing navigation main menu', ()=> {
 
 
     beforeEach(function () {
-        cy.visit('https://openweathermap.org/');
+        cy.visit('/');
         cy.fixture('weatherData').then((data) => {
             this.data = data;
         });
-
     })
 
     it('Correct name of menu items', function () {
 
         cy.get(nameMenu).each((item, index) => {
             expect(item.text()).to.eq(this.data.navigationMainMenu[index])
-                //.and(item.text()).to.eq('be.visible')
-
         })
     });
 
     it ('Unification of menu items', function () {
-
         cy.get (nameMenu).each(($el, idx) => {
         cy.wrap($el).should('have.css', 'color', 'rgb(242, 242, 242)')
             .and('have.css', 'font-family', '"Space Grotesk", Arial, sans-serif')
