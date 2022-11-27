@@ -1,6 +1,7 @@
 {
   "headerForecastDay": "8-day forecast",
   "numberDays": 8,
-  "iconWeather": 8
+  "iconWeather": 8,
+  "navigationMainMenu": ["Guide","API","Dashboard","Marketplace","Pricing","Maps","Our Initiatives","Partners","Blog","For Business","Sign in", "Support"]
 
 }

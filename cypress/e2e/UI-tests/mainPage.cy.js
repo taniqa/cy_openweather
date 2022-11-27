@@ -1,4 +1,5 @@
 /// <reference types="cypress" />
+import "cypress-real-events/support" //подключение библиотеки
 
 describe ('Daily forecast on index', ()=> {
 
@@ -43,4 +44,19 @@ describe ('Daily forecast on index', ()=> {
         cy.xpath("//ul[@class='day-list']/li[1]").click()
         cy.xpath("//ul[@class='options-scroller']/li[1]").click()
     });
-})
+});
+
+describe ('Daily forecast on index', ()=> {
+
+    beforeEach (function () {
+        cy.visit ('https://openweathermap.org/');
+        //cy.viewport(1680, 1050); - так можно менять размер окна браузера
+        cy.fixture('weatherData').then ((data) => {
+            this.data = data;                        });
+    })
+
+    it ('Test header', function (){
+        cy.get('div .daily-container h3').should('have.text', this.data.headerForecastDay)
+        cy.xpath("//div[@class='daily-container block mobile-padding']/h3").should('have.text', this.data.headerForecastDay)
+    });
+});
