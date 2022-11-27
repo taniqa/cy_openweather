@@ -2,6 +2,14 @@
   "headerForecastDay": "8-day forecast",
   "numberDays": 8,
   "iconWeather": 8,
-  "navigationMainMenu": ["Guide","API","Dashboard","Marketplace","Pricing","Maps","Our Initiatives","Partners","Blog","For Business","Sign in", "Support"]
-
+  "navMenuLink":
+  ["Guide", "API", "Dashboard", "Marketplace", "Pricing",
+    "Maps", "Our Initiatives", "Partners",
+    "Blog", "For Business", "Sign in", "Support"],
+  "pageTitleText":
+  ["Guide", "Weather API", "Weather dashboard",
+   "Custom Weather Products", "Pricing", "Interactive weather maps - OpenWeatherMap",
+  "Our Initiatives", "Partners and solutions", "Blog - OpenWeatherMap",
+  "\n            \n            OpenWeatherfor business", "OpenWeather for business - OpenWeatherMap",
+  "Sign In To Your Account"]
 }
