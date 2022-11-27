@@ -2,14 +2,40 @@
   "headerForecastDay": "8-day forecast",
   "numberDays": 8,
   "iconWeather": 8,
-  "navMenuLink":
-  ["Guide", "API", "Dashboard", "Marketplace", "Pricing",
-    "Maps", "Our Initiatives", "Partners",
-    "Blog", "For Business", "Sign in", "Support"],
-  "pageTitleText":
-  ["Guide", "Weather API", "Weather dashboard",
-   "Custom Weather Products", "Pricing", "Interactive weather maps - OpenWeatherMap",
-  "Our Initiatives", "Partners and solutions", "Blog - OpenWeatherMap",
-  "\n            \n            OpenWeatherfor business", "OpenWeather for business - OpenWeatherMap",
-  "Sign In To Your Account"]
+  "navMenuLink": [
+    "Guide",
+    "API",
+    "Dashboard",
+    "Marketplace",
+    "Pricing",
+    "Maps",
+    "Our Initiatives",
+    "Partners",
+    "Blog",
+    "For Business",
+    "Sign in",
+    "Support"
+  ],
+  "pageTitleText": [
+    "Guide",
+    "Weather API",
+    "Weather dashboard",
+    "Custom Weather Products",
+    "Pricing",
+    "Interactive weather maps - OpenWeatherMap",
+    "Our Initiatives",
+    "Partners and solutions",
+    "Blog - OpenWeatherMap",
+    "\n            \n            OpenWeatherfor business",
+    "OpenWeather for business - OpenWeatherMap",
+    "Sign In To Your Account",
+    "Frequently Asked Questions",
+    "How to start using professional collections",
+    "Ask a question"
+  ],
+  "navDropdownMenu": [
+    "FAQ",
+    "How to start",
+    "Ask a question"
+  ]
 }

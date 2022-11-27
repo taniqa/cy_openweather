@@ -1,5 +1,8 @@
 /// <reference types="cypress" />
-import "cypress-real-events/support" //подключение библиотеки
+import "cypress-real-events/support"
+
+
+
 
 describe ('Daily forecast on index', ()=> {
 
