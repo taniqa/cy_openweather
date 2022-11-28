@@ -5,7 +5,8 @@ import MainPage from "../../pageObjects/MainPage"
 const mainPage = new MainPage();
 
 
-// testing block - 8-day forecast
+// ================ testing block - 8-day forecast ================
+
 describe('8-day forecast on index', () => {
 
     beforeEach(function () {
@@ -13,7 +14,7 @@ describe('8-day forecast on index', () => {
         cy.fixture('weatherData').then((data) => {
             this.data = data;
         });
-    })
+    });
 
     it('Test header', function () {
 
@@ -30,14 +31,14 @@ describe('8-day forecast on index', () => {
     it('Test for correct dates', function () {
 
         let currentDate = new Date();
-        let eightDate = currentDate.toLocaleDateString('en-US', {weekday: 'short', month: 'short', day: '2-digit'});
+        let eightDates = currentDate.toLocaleDateString('en-US', {weekday: 'short', month: 'short', day: '2-digit'});
         for (let i = 0; i < 7; i++) {
             currentDate.setDate(currentDate.getDate() + 1);
-            eightDate += currentDate.toLocaleDateString('en-US', {weekday: 'short', month: 'short', day: '2-digit'})
+            eightDates += currentDate.toLocaleDateString('en-US', {weekday: 'short', month: 'short', day: '2-digit'})
         };
 
-        mainPage.elements.eightDayForecastDate().should('have.text', eightDate)
-        mainPage.elements.XPath_eightDayForecastDate().should('have.text', eightDate)
+        mainPage.elements.eightDayForecastDate().should('have.text', eightDates)
+        mainPage.elements.XPath_eightDayForecastDate().should('have.text', eightDates)
     });
 
     it('Test for the count of weather icon', function () {
@@ -60,7 +61,9 @@ describe('8-day forecast on index', () => {
     });
 });
 
-// testing block - Search
+
+// ================ testing block - Search ================
+
 describe('Search on index', () => {
 
     beforeEach(function () {
@@ -68,9 +71,41 @@ describe('Search on index', () => {
         cy.fixture('weatherData').then((data) => {
             this.data = data;
         });
-    })
-
-    it('Test button submit', function () {
-
     });
+
+    it('Positive testing of the City Search', function () {
+
+        let searchCity = 'Paris'
+
+        mainPage.elements.searchCityField()
+                         .should('have.attr', 'placeholder', this.data.searchCityPlaceholder)
+                         .type(searchCity)
+        mainPage.elements.searchCityButton()
+                         .should('have.text', this.data.searchCityButtonName)
+
+        mainPage.clickSearchCityButton()
+        mainPage.elements.searchCityDropdown()
+                         .should('be.visible').contains(searchCity)
+
+        mainPage.clickSearchCityDropdownFirstRow()
+        mainPage.elements.currentCityName()
+                         .should("contain", searchCity)
+    });
+
+    it('Negative testing of the City Search', function () {
+
+        let searchCityText = 'Gfjfdingodo'
+
+        mainPage.elements.searchCityField().type(searchCityText)
+        mainPage.clickSearchCityButton()
+
+        mainPage.elements.searchCityNotFound()
+                         .should('be.visible')
+                         .and('have.text', this.data.searchCityError)
+        mainPage.elements.searchCityNotification()
+                         .should('be.visible')
+                         .and('have.text', this.data.searchCityNoResults + searchCityText)
+    });
+
+
 });

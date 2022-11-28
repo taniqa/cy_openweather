@@ -37,5 +37,9 @@
     "FAQ",
     "How to start",
     "Ask a question"
-  ]
+  ],
+  "searchCityPlaceholder": "Search city",
+  "searchCityButtonName": "Search",
+  "searchCityError": "Not found. To make search more precise put the city's name, comma, 2-letter country code (ISO3166).",
+  "searchCityNoResults": "No results for "
 }
