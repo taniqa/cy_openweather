@@ -24,9 +24,6 @@ class SignIn {
         this.elements.signInCheckboxRememberMe().check()
         return this
     }
-
-
-
 }
 
 export default SignIn;

@@ -45,6 +45,7 @@
 
   "userEmail":"t9035793131@gmail.com",
   "userPassword": "p_gR6R^Hc_-KTB9",
-  "userSignedNotice": "Signed in successfully."
+  "userSignedNotice": "Signed in successfully.",
+  "userSignedAlert": "Invalid Email or password."
 
 }

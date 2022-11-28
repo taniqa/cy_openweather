@@ -16,7 +16,7 @@ describe('Sign In form testing', () => {
         });
     });
 
-    it('Positive testing Sign In user', function () {
+    xit('Positive testing "Sign In" user', function () {
 
         header.clickNavLinkSignIn()
 
@@ -30,6 +30,21 @@ describe('Sign In form testing', () => {
                                       .and('have.text', this.data.userSignedNotice)
     });
 
+    it('Negative testing "Sign In" user > wrong email', function () {
+
+        let randomEmail = `testGroup${Math.round(Math.random()*1000)+1000}@mailtest.com`
+
+        header.clickNavLinkSignIn()
+
+        signIn
+            .typeSignInInputEmail(randomEmail)
+            .typeSignInInputPassword(this.data.userPassword)
+            .checkSignInCheckboxRememberMe()
+            .clickSignInButtonSubmit()
+
+        signIn.elements.signInNotice().should('be.visible')
+            .and('have.text', this.data.userSignedAlert)
+    });
 
 
 })
