@@ -23,3 +23,19 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+
+// -- This my commands for get api response --
+
+Cypress.Commands.add('getResponse', (lat, lon) => {
+
+    cy.request( {
+        method: 'GET',
+        url: `api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=5fc0795fcbfb2581f15b5a22efa4489e`})
+        .then((response) => {
+            cy.writeFile('cypress/fixtures/currentWeatherData.json', response.body)
+        })
+})
+
+
+

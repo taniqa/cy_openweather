@@ -80,6 +80,7 @@ describe('Search on index', () => {
         mainPage.elements.searchCityField()
                          .should('have.attr', 'placeholder', this.data.searchCityPlaceholder)
                          .type(searchCity)
+
         mainPage.elements.searchCityButton()
                          .should('have.text', this.data.searchCityButtonName)
 
@@ -108,4 +109,30 @@ describe('Search on index', () => {
     });
 
 
+// ================ testing block - Current weather data ================
+
+    describe('Current weather data on index', () => {
+/*
+1.получаем response json файл по запросу погоды через API
+2.обработка данных из json - приведение к формату UI
+3.сравниваем полученные данные через api с отображением данных на сайте (температура, город, текущая дата)
+ */
+        beforeEach(function () {
+            cy.visit('/');
+            cy.fixture('currentWeatherData').then((data) => {
+                this.data = data;
+            });
+        });
+
+        it ('Correct display of weather data on site received via the API', function () {
+
+            let latitude = "41.642";
+            let longitude = "41.636";
+
+            cy.getResponse(latitude,longitude)
+
+            mainPage.elements.currentTemp().should('contain.text', Math.ceil(this.data.main.temp - 273.15))
+            mainPage.elements.currentCityName().should('have.text', this.data.name.concat(", ",this.data.sys.country))
+        });
+    })
 });

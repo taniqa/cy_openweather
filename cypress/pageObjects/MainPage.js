@@ -19,7 +19,8 @@ class MainPage {
         searchCityNotification: () => cy.get('div.widget-notification'),
 
         currentCityName: () => cy.get('div.current-container h2'),
-
+        currentTemp: () => cy.get('div.current-temp span.heading'),
+        currentDate: () => cy.get('div.current-container.mobile-padding span.orange-text'),
 
     //XPath selectors
         XPath_eightDayForecastTitle: () => cy.xpath("//div[@class='daily-container block mobile-padding']/h3"),
@@ -52,6 +53,7 @@ class MainPage {
     clickSearchCityDropdownFirstRow() {
         this.elements.searchCityDropdownFirstRow().click()
     }
+
 }
 
 export default MainPage;
