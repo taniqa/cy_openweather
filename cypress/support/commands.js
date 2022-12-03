@@ -35,7 +35,13 @@ Cypress.Commands.add('getResponse', (lat, lon) => {
         .then((response) => {
             cy.writeFile('cypress/fixtures/currentWeatherData.json', response.body)
         })
-})
+});
+
+Cypress.Commands.add('getSearhCity', (city) => {
+    cy.get('div.search-container input').type(city)
+    cy.get('div.search-container + button').click()
+    cy.get('ul.search-dropdown-menu li:first-child').click()
+});
 
 
 

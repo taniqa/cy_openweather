@@ -124,12 +124,14 @@ describe('Search on index', () => {
             });
         });
 
-        it ('Correct display of weather data on site received via the API', function () {
+        it('Correct display of weather data on site received via the API', function () {
 
             let latitude = "41.642";
             let longitude = "41.636";
+            let city = "Batumi";
 
-            cy.getResponse(latitude,longitude)
+            cy.getResponse(latitude,longitude);
+            cy.getSearhCity(city);
 
             mainPage.elements.currentTemp().should('contain.text', Math.ceil(this.data.main.temp - 273.15))
             mainPage.elements.currentCityName().should('have.text', this.data.name.concat(", ",this.data.sys.country))
