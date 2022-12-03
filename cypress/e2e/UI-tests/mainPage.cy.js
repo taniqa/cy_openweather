@@ -107,7 +107,7 @@ describe('Search on index', () => {
                          .should('be.visible')
                          .and('have.text', this.data.searchCityNoResults + searchCityText)
     });
-
+});
 
 // ================ testing block - Current weather data ================
 
@@ -136,5 +136,4 @@ describe('Search on index', () => {
             mainPage.elements.currentTemp().should('contain.text', Math.ceil(this.data.main.temp - 273.15))
             mainPage.elements.currentCityName().should('have.text', this.data.name.concat(", ",this.data.sys.country))
         });
-    })
 });
