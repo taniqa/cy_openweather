@@ -27,13 +27,15 @@
 
 // -- This my commands for get api response --
 
+
 Cypress.Commands.add('getResponse', (lat, lon) => {
 
-    cy.request( {
+    cy.request({
         method: 'GET',
-        url: `api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=5fc0795fcbfb2581f15b5a22efa4489e`})
+        url: `api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=5fc0795fcbfb2581f15b5a22efa4489e`
+    })
         .then((response) => {
-            cy.writeFile('cypress/fixtures/currentWeatherData.json', response.body)
+    cy.writeFile('cypress/fixtures/currentWeatherData.json', response.body)
         })
 });
 

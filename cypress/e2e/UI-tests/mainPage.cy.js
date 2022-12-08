@@ -7,7 +7,7 @@ const mainPage = new MainPage();
 
 // ================ testing block - 8-day forecast ================
 
-describe('8-day forecast on index', () => {
+describe.skip('8-day forecast on index', () => {
 
     beforeEach(function () {
         cy.visit('/');
@@ -64,7 +64,7 @@ describe('8-day forecast on index', () => {
 
 // ================ testing block - Search ================
 
-describe('Search on index', () => {
+describe.skip('Search on index', () => {
 
     beforeEach(function () {
         cy.visit('/');
@@ -124,7 +124,7 @@ describe('Search on index', () => {
             });
         });
 
-        it('Correct display of weather data on site received via the API', function () {
+        xit('Correct display of weather data on site received via the API', function () {
 
             let latitude = "41.642";
             let longitude = "41.636";
