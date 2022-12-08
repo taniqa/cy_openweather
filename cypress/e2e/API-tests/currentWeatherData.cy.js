@@ -11,7 +11,7 @@ describe ("GET /200ok", () => {
         cy.viewport (300,500);
     });
 
-    xit('Check status 200ok', () => {
+    it('Check status 200ok', () => {
         cy.api( {
             method: 'GET',
             url: `api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=5fc0795fcbfb2581f15b5a22efa4489e`})
@@ -21,7 +21,7 @@ describe ("GET /200ok", () => {
         })
     });
 
-    xit('Check property', () => {
+    it('Check property', () => {
         cy.api( {
             method: 'GET',
             url: `api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=5fc0795fcbfb2581f15b5a22efa4489e`})
@@ -31,7 +31,7 @@ describe ("GET /200ok", () => {
             })
     });
 
-    xit('Check contains element with key weather and value id', () => {
+    it('Check contains element with key weather and value id', () => {
         cy.api( {
             method: 'GET',
             url: `api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=5fc0795fcbfb2581f15b5a22efa4489e`})
@@ -54,7 +54,5 @@ describe ("GET /200ok", () => {
                     console.log(city, temp, country)
                 })
     });
-
-
 
 })
