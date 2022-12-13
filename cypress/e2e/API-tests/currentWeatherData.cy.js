@@ -1,5 +1,5 @@
 
-describe ("GET /200ok", () => {
+describe ("API tests", () => {
 
     let latitude = "41.642";
     let longitude = "41.636";
@@ -54,5 +54,4 @@ describe ("GET /200ok", () => {
                     console.log(city, temp, country)
                 })
     });
-
-})
+});

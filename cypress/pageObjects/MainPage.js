@@ -22,6 +22,8 @@ class MainPage {
         currentTemp: () => cy.get('div.current-temp span.heading'),
         currentDate: () => cy.get('div.current-container.mobile-padding span.orange-text'),
 
+        tableOneCall: () => cy.get('table.table-one-call tbody td:first-child'),
+
     //XPath selectors
         XPath_eightDayForecastTitle: () => cy.xpath("//div[@class='daily-container block mobile-padding']/h3"),
         XPath_eightDayForecastCount: () => cy.xpath("//ul[@class='day-list']/li/span"),

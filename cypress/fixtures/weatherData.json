@@ -42,10 +42,16 @@
   "searchCityButtonName": "Search",
   "searchCityError": "Not found. To make search more precise put the city's name, comma, 2-letter country code (ISO3166).",
   "searchCityNoResults": "No results for ",
-
-  "userEmail":"t9035793131@gmail.com",
+  "userEmail": "t9035793131@gmail.com",
   "userPassword": "p_gR6R^Hc_-KTB9",
   "userSignedNotice": "Signed in successfully.",
-  "userSignedAlert": "Invalid Email or password."
-
+  "userSignedAlert": "Invalid Email or password.",
+  "IncludedData": [
+    "Current weather",
+    "Minute forecast",
+    "Hourly forecast",
+    "Daily forecast",
+    "Hourly historical data",
+    "National weather alerts"
+  ]
 }

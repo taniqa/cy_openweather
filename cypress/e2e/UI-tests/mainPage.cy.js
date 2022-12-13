@@ -137,3 +137,26 @@ describe('Search on index', () => {
             mainPage.elements.currentCityName().should('have.text', this.data.name.concat(", ",this.data.sys.country))
         });
 });
+
+// ================ testing block - Current weather data ================
+describe('Correct data in table', () => {
+
+    beforeEach(function () {
+        cy.visit('/');
+        cy.fixture('weatherData').then((data) => {
+            this.data = data;
+        });
+    });
+
+    it('Correct data in table "Included data"', function () {
+
+       mainPage.elements.tableOneCall().then(($inData) => {
+           let arr = $inData
+               .toArray()
+               .map(el => el.innerText)
+
+           expect(arr).to.deep.eq(this.data.IncludedData)
+        })
+
+    });
+});
